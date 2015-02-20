@@ -8,10 +8,10 @@
 	
 	var iBodyWidth = $("body").width();
 	var iBodyHeight = $("body").height();
-	var iMenuOffset = 38;
+	var iMenuOffset = 0;
 	var iSubMenuOffset = 151;
 	var iVCRHeight = 49;
-	var iVCROffset = 30;
+	var iVCROffset = 60;
 	
 	$("#map").height($("body").height() - $("#map").offset().top);
 	$("#menu").height($("#map").height() - iMenuOffset);
@@ -33,8 +33,9 @@ $(document).ready(function() {
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGVhbm9sc2VuMSIsImEiOiJ1dkxBdm9FIn0.kapau_lUukKIE93Y8I0A9g';
 
-    var map = L.mapbox.map('map', 'deanolsen1.l6h0h2j6', 
+    var map = L.mapbox.map('map', 'deanolsen1.l6ghnl45', 
     	{zoomControl : false, 
+    		opacity: 1.0,
     	//removed attribution from bottom of map to credits page
     	attributionControl: false});
     // create zoom-in effect on map on load, comment out to disable
@@ -51,6 +52,9 @@ $(document).ready(function() {
 	//Setup and initialize dynamic document resize functionality
 	//In lieu of a better solution - the margin and removal is a hack to keep the vcr looking nice
 	$(window).resize(function () { $("#vcr-controls").css("margin-right","0px"); SizeMe(map) });
+	 SizeMe(map);
+
+	$(window).resize(function () { $("#temporal-legend").css("margin-right","0px"); SizeMe(map) });
 	 SizeMe(map);
 
 
@@ -265,13 +269,13 @@ $(document).ready(function() {
 						});
 						
 						zoomIt = function(e) {
-							if (zmap._loaded) zmap.setZoom(map.getZoom() +1);
+							if (zmap._loaded) zmap.setZoom(map.getZoom());
 						};
 
 						updateLens = function(e) {
-							oZlens.style.top = (e.y -10)  + 'px';
-							oZlens.style.left = (e.x - 10) + 'px';
-							zmap.setView(e.latlng, map.getZoom() + 0, true);
+							oZlens.style.top = (e.y -15)  + 'px';
+							oZlens.style.left = (e.x - 15) + 'px';
+							zmap.setView(e.latlng, map.getZoom()+0, true);
 						};
 						
 						map.on("zoomend",function (){ 
@@ -528,19 +532,19 @@ $(document).ready(function() {
 
 	var zoommap = L.mapbox.map('zoommap', 'deanolsen1.l4i434a2', {
     fadeAnimation: false,
-    zoomControl: false,
+    zoomControl: true,
     clickable: true,
     attributionControl: false
 	});
 
-	/*// Call update or zoom functions when
+	// Call update or zoom functions when
 	// these events occur.
-	map.on('click', update);
-	map.on('zoomend', zoom);*/
+	// map.on('click', update);
+	// map.on('zoomend', zoom);
 
-	function zoom(e) {
-	    if (zoommap._loaded) zoommap.setZoom(map.getZoom() +1);
-	}
+	// function zoom(e) {
+	//     if (zoommap._loaded) zoommap.setZoom(map.getZoom());
+	// }
 
 	function update(e) {
 		//console.log(e);
@@ -548,7 +552,7 @@ $(document).ready(function() {
 	   // zl.style.left = e.containerPoint.x - 100 + 'px';
 	    zl.style.top = (e.containerPoint.y -10)  + 'px';
 	    zl.style.left = (e.containerPoint.x - 10) + 'px';
-	    zoommap.setView(e.latlng, map.getZoom() + 0, true);
+	    zoommap.setView(e.latlng, map.getZoom(), true);
 	}
 
 });
