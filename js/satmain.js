@@ -38,21 +38,11 @@ $(document).ready(function() {
     		opacity: 1.0,
     	//removed attribution from bottom of map to credits page
     	attributionControl: false});
-    // create zoom-in effect on map on load, comment out to disable
-     // map.setView([48.876, 2.357], 8);
-     //  window.setTimeout (function () {
-     //   	map.setView([48.876, 2.357], 11)}, 2000);
-     //  window.setTimeout (function () {
-     //   	map.setView([48.876, 2.357], 13)}, 4000);
-     //  window.setTimeout (function () {
-     //   	map.setView([48.876, 2.357], 15)}, 6000);
       //uncomment following line for non-zoomed map view
        	map.setView([48.876, 2.357], 15);
 		
 	//Setup and initialize dynamic document resize functionality
 	//In lieu of a better solution - the margin and removal is a hack to keep the vcr looking nice
-	$(window).resize(function () { $("#vcr-controls").css("margin-right","0px"); SizeMe(map) });
-	 SizeMe(map);
 
 	$(window).resize(function () { $("#temporal-legend").css("margin-right","0px"); SizeMe(map) });
 	 SizeMe(map);
@@ -273,9 +263,9 @@ $(document).ready(function() {
 						};
 
 						updateLens = function(e) {
-							oZlens.style.top = (e.y -15)  + 'px';
-							oZlens.style.left = (e.x - 15) + 'px';
-							zmap.setView(e.latlng, map.getZoom()+0, true);
+							oZlens.style.top = (e.y - 35)  + 'px';
+							oZlens.style.left = (e.x - 35) + 'px';
+							zmap.setView(e.latlng, map.getZoom()-2, true);
 						};
 						
 						map.on("zoomend",function (){ 
@@ -331,14 +321,14 @@ $(document).ready(function() {
     //marker size, popup
     function updatePropSymbols() {
 		markers.eachLayer(function(layer) {
-			var props = layer.feature.properties;
+			// var props = layer.feature.properties;
 			// size of circle markers
-			var	radius = 100;
-			var	popupContent = "<i><b>" + props.SM + "</b></i>" + " <br>"+ props.Address +"<br>page " + props.Page ;
-			layer.setRadius(radius);
-			layer.bindPopup(popupContent, { offset: new L.Point(0,10) });
-            layer.options.color = PropColor(props.SM);
-            layer.options.fillColor = PropColor(props.SM);
+			// var	radius = 500;
+			// var	popupContent = "<i><b>" + props.SM + "</b></i>" + " <br>"+ props.Address +"<br>page " + props.Page ;
+			// layer.setRadius(radius);
+			// layer.bindPopup(popupContent, { offset: new L.Point(0,10) });
+            // layer.options.color = PropColor(props.SM);
+            // layer.options.fillColor = PropColor(props.SM);
 		});
 	} // end updatePropSymbols
 
@@ -373,144 +363,6 @@ $(document).ready(function() {
 		sliderControl.addTo(map);
 		createTemporalLegend(Pages [0]);
 	} 
-
-    //create page line time VCR control, starts out with pause button hidden until user clicks play button
-	function sequenceInteractions(info, data) {
-		$(".pause").hide();
-		//play behavior
-		$(".play").click(function(){
-				$(".pause").show();
-				$(".play").hide();
-				map.setView([48.876, 2.357], 15);
-				clearInterval(interval);
-				speed = 250;
-				animateMap(info, data, speed); 
-				menuSelection(info.SMs, info, data);
-				updateMenu();
-			});
-
-		//pause behavior; hides pause button if displayed and shows play button, stops all map action 
-		$(".pause").click(function(){
-				$(".pause").hide();
-				$(".play").show();			
-				stopMap(info, data, speed); 
-			});
-
-		//step behavior; stops map hides pause button if displayed and shows play button, increments data etc. by 1
-		$(".step").click(function(){
-			stopMap();
-				$(".pause").hide();
-				$(".play").show();
-				step(info, data);
-			});
-
-		//back behavior; stops map hides pause button if displayed and shows play button, decrements data etc by 1
-		$(".back").click(function(){
-				stopMap();
-				$(".pause").hide();
-				$(".play").show();
-				goBack(info, data);
-			});
-
-		//back behavior; stops map and changes buttons to cue user to change
-		$(".back-full").click(function(){
-				stopMap();
-				$(".pause").hide();
-				$(".play").show();
-				backFull(info, data);
-			});
-
-		//full forward behavior - hides buttons and goes to end of timeline
-		$(".step-full").click(function(){
-				$(".pause").hide();
-				$(".play").show();
-				stepFull(info, data);
-			});
-
-		//decrease speed behavior, increases speed by 1/10 sec per click by lowering the interval 
-		$(".faster").click(function(){
-				if (speed>100) {
-					speed = speed-100;
-					clearInterval(interval);
-					animateMap(info, data, speed); 
-				}
-				else (speed = 250);
-				//extra code to ensure slider data progress at 1/4 second delay 
-				//since initial speed starts at 250, changing by 100 would enable 
-				//user to go outside of the bounds of either increase or decrease 
-				//function by speed=50.  This handles that potential error 
-			});
-
-		//increase speed behavior, decreases speed by 1/10th sec per click by lowering the interval
-		$(".slower").click(function(){
-			if (speed<1000) {
-			speed = speed+100;
-			clearInterval(interval);
-			animateMap(info, data, speed); 
-			console.log(speed);
-			}
-			else {speed = 250};
-			//extra code to ensure slider data progresses at 1/4 second delay 
-			//since initial speed starts at 250, changing by 100 would enable 
-			//user to go outsiude of the bounds of either increase or decrease 
-			//function by speed=50.  This handles that potential error
-			});
-	}
-
-	// create map animation
-	function animateMap (info, data, speed) {
-		interval = setInterval(function(){step(info, data)},speed);
-	}
-	//gives ability for map to stop in place by changing the speed and clearing the interval 
-	function stopMap(info, data, speed){
-		speed = 0;
-		clearInterval(interval);
-	}
-
-	//function to set the counter and timeline back 1 without going past the first page (9)
-	function goBack(info, data, speed){
-		if (thisPage >9) {
-			thisPage--; 
-		}; 
-		createPropSymbols(info, data, thisPage, speed, true);
-		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
-	}
-
-	//function to allow counter and data to increment by one
-	function goForward(info, data, speed){
-		thisPage++; 
-		console.log(speed);
-		createPropSymbols(info, data, thisPage, speed, true);
-		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
-	}
-	//function to allow counter and data to increment by one
-	function step(info, data, speed){
-		if (thisPage <238) {
-			thisPage++; 
-			};
-			console.log(speed)
-		createPropSymbols(info, data, thisPage,speed, true);
-		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
-	}
-
-	//takes the user to the last page (238)
-	function stepFull(info, data, speed){
-		thisPage=238; 
-		createPropSymbols(info, data, thisPage,speed, true);
-		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
-	}
-
-	//vcr control to first page, pg 9--book starts on pg 9
-	function backFull(info, data, speed){
-		thisPage=9; 
-		createPropSymbols(info, data, thisPage,speed, true);
-		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
-	}
 
     //add page number demonstration 
 

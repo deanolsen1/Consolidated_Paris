@@ -1,9 +1,27 @@
 // Javascript for map page
 
+ function SizeMe(map) {
+	//Dynamically Resize Body
+	$("body").height($(window).outerHeight()-40);
+	$("body").width($(window).outerWidth());
+	
+	var iBodyWidth = $("body").width();
+	var iBodyHeight = $("body").height();
+	var iMenuOffset = 0;
+	var iSubMenuOffset = 151;
+	var iVCRHeight = 49;
+	var iVCROffset = 60;
+	
+	$("#map").height($("body").height() - $("#map").offset().top);
+	$("#menu").height($("#map").height() - iMenuOffset);
+	$("#vcr-controls").css("top",($("#map").offset().top + $("#map").height()- iVCRHeight -iVCROffset) + "px")
+	$("#SubjectiveMarkers").height($("#menu").height() - iSubMenuOffset);
+	map.invalidateSize();
+}
+
+
 $(document).ready(function() {
 	var markers;
-	// Possible heat map layer var
-	var heat;
     var SMFilter = [];
 	var PageFilter = [];
 	var thisPage = 9; //sets the first page of the counter to page 9
@@ -176,18 +194,13 @@ $(document).ready(function() {
 
         //opacity of markers, transition time for black circle to appear
 		pointToLayer: function(feature, latlng) {
-			return L.circle(latlng, 200,{
+			return L.circle(latlng, 100,{
                     fillColor: PropColor(feature.properties.SM),
 				    color: PropColor(feature.properties.SM),
                     weight: 4,
 				    fillOpacity: 0.2
 
                 }).on({
-                	//attach, style popups on mouseovers
-					// add: function(g) {
-					// 	this.transition();
-					// 	this.setStyle({})
-					// }
 
 					mouseover: function(e) {
 						this.openPopup();
