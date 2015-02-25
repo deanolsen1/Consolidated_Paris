@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGVhbm9sc2VuMSIsImEiOiJ1dkxBdm9FIn0.kapau_lUukKIE93Y8I0A9g';
 
-    var map = L.mapbox.map('map', 'deanolsen1.l6ghnl45', 
+    var map = L.mapbox.map('map', 'deanolsen1.laf3g5ko', 
     	{	zoomControl : false, 
     		opacity: 0.3,
 	    	attributionControl: false});
@@ -163,7 +163,7 @@ $(document).ready(function() {
             SMs : SMs,
             pages : pages.sort(function(a,b){return a - b}),
             SMCount : SMCount
-        };        console.log([SMTracker])
+        };        
 
     };
 
@@ -223,7 +223,7 @@ $(document).ready(function() {
                     fillColor: PropColor(feature.properties.SM),
 				    color: PropColor(feature.properties.SM),
 					stroke: false,
-                    weight: 4,
+                    weight: 2,
                     clickable: true,
 				    fillOpacity: 0.0,
 					opacity: 0.0
@@ -245,23 +245,28 @@ $(document).ready(function() {
 						var oZlens = document.getElementById(idZ);
 						
 						//Boiler Plate Setup
-						var zmap = L.mapbox.map(idM, 'deanolsen1.l4i434a2', {
+						var zmap = L.mapbox.map(idM, 'deanolsen1.l6h0h2j6', {
 							fadeAnimation: false,
 							zoomControl: false,
 							clickable: false,
 							attributionControl: false,
 
-						});
+						}).setView([48.876, 2.357], 15);
+						map.dragging.disable();
+						map.touchZoom.disable();
+						map.doubleClickZoom.disable();
+						map.scrollWheelZoom.disable();
+
 						
 						zoomIt = function(e) {
-							if (zmap._loaded) zmap.setZoom(map.getZoom());
+							if (zmap._loaded) zmap.setZoom(map.getZoom(15));
 						};
 
 
 						updateLens = function(e) {
 							oZlens.style.top = (e.y )  + 'px';
 							oZlens.style.left = (e.x ) + 'px';
-							zmap.setView(e.latlng, map.getZoom(), true);
+							zmap.setView(e.latlng, map.getZoom(15), true);
 						};
 						
 						map.on("zoomend",function (){ 
@@ -279,9 +284,9 @@ $(document).ready(function() {
 						zoomIt(e);	
 						
 						$("#"+idZ).on({
-							mouseover: function(e) {
-								circle.openPopup();
-							},
+							// mouseover: function(e) {
+							// 	circle.openPopup();
+							// },
 							mouseout: function(e) {
 								//circle.closePopup();
 							}
@@ -303,9 +308,9 @@ $(document).ready(function() {
 			}
 		}).addTo(map);
 		updatePropSymbols();
-		if(arrCoord.length > 0){
-			map.fitBounds(arrCoord);
-		}
+		// if(arrCoord.length > 0){
+		// 	map.fitBounds(arrCoord);
+		// }
 	} 	// end createPropSymbols()
 
 
@@ -378,12 +383,12 @@ $(document).ready(function() {
 
 	var zl = document.getElementById('zoomlens');
 
-	var zoommap = L.mapbox.map('zoommap', 'deanolsen1.l4i434a2', {
+	var zoommap = L.mapbox.map('zoommap', 'deanolsen1.l6h0h2j6', {
     fadeAnimation: false,
-    zoomControl: true,
-    clickable: true,
+    zoomControl: false,
+    clickable: false,
     attributionControl: false
-	});
+	}).setView([48.876, 2.357], 15);
 
 	// Call update or zoom functions when
 	// these events occur.
@@ -398,9 +403,9 @@ $(document).ready(function() {
 		//console.log(e);
 	   // zl.style.top = e.containerPoint.y - 100 + 'px';
 	   // zl.style.left = e.containerPoint.x - 100 + 'px';
-	    zl.style.top = (e.containerPoint.y -10)  + 'px';
-	    zl.style.left = (e.containerPoint.x - 10) + 'px';
-	    zoommap.setView(e.latlng, map.getZoom(), true);
+	    // zl.style.top = (e.containerPoint.y -10)  + 'px';
+	    // zl.style.left = (e.containerPoint.x - 10) + 'px';
+	    zoommap.setView(e.latlng, map.getZoom(15), true);
 	}
 
 });

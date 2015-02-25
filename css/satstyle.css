@@ -249,17 +249,17 @@ body{
 }
 
 #border {
-  border: 3px solid #404040;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-}
+/*  border: 1px solid #404040;
+*/  border-radius: 50%;
+/*  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+*/}
 
 .overlay {
   position: absolute;
   pointer-events: none;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   z-index: 1000;
 }
 
@@ -272,5 +272,5 @@ body{
 }
 
 .leaflet-overlay-pane {
-	z-index: 5;
+	z-index: 100;
 }
