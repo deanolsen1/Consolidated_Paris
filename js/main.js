@@ -197,8 +197,8 @@ $(document).ready(function() {
 			return L.circle(latlng, 100,{
                     fillColor: PropColor(feature.properties.SM),
 				    color: PropColor(feature.properties.SM),
-                    weight: 4,
-				    fillOpacity: 0.2
+                    weight: 2,
+				    fillOpacity: 0.3
 
                 }).on({
 
@@ -219,9 +219,81 @@ $(document).ready(function() {
 	} // end createPropSymbols()
 
 	//color of markers
-    function PropColor(SM) {
-        return "#CC2B0A";
+    function PropColor(e) {
+    	return e === "Accidental art object" ? 'rgb(166,206,227)' :
+           e === "Acoustic Image"  ? 'rgb(178,223,138)' :
+           e === "Ambiance"  ? 'rgb(51,160,44)' :
+           e === "Announcement"  ? 'rgb(251,154,153)' :
+           e === "Antiville"   ? 'rgb(227,26,28)' :
+           e === "Appearance" ? 'rgb(253,191,111)' :
+           e === "Archive" ? 'rgb(255,127,0)' :
+           e === "Art sacrificed" ? 'rgb(166,206,227)' :
+           e === "Attraction" ? 'rgb(202,178,214)' :
+           e === "Branding" ? 'rgb(106,61,154)' :
+           e === "Cartography" ? 'rgb(255,255,153)' :
+           e === "Confession" ? 'rgb(177,89,40)' :
+           e === "Configuration" ? 'rgb(141,211,199)' :
+           e === "Conflicting sites" ? 'rgb(255,255,179)' :
+           e === "Contact" ? 'rgb(190,186,218)' :
+           e === "Danger" ? 'rgb(251,128,114)' :
+           e === "Did you know?" ? 'rgb(128,177,211)' :
+           e === "Future life" ? 'rgb(253,180,98)' :
+           e === "Implicit information" ? 'rgb(179,222,105)' :
+           e === "Incident" ? 'rgb(252,205,229)' :
+           e === "Incursion into nonfactual world" ? 'rgb(217,217,217)' :
+           e === "Indications Incarnate" ? 'rgb(188,128,189)' :
+           e === "Intervention" ? 'rgb(204,235,197)' :
+           e === "Interzonal comparison" ? 'rgb(255,237,111)' :
+           e === "Intrusion" ? 'rgb(141,211,199)' :
+           e === "Local Figure" ? 'rgb(255,255,179)' :
+           e === "Material Esthetics" ? 'rgb(190,186,218)' :
+           e === "Mental Image" ? 'rgb(251,128,114)' :
+           e === "Methodology" ? 'rgb(128,177,211)' :
+           e === "Negative Zone" ? 'rgb(253,180,98)' :
+           e === "Numerophilia" ? 'rgb(179,222,105)' :
+           e === "Optical Illusion" ? 'rgb(252,205,229)' :
+           e === "Performance" ? 'rgb(217,217,217)' :
+           e === "Positive Zone" ? 'rgb(188,128,189)' :
+           e === "Previous city" ? 'rgb(204,235,197)' :
+           e === "Previous life" ? 'rgb(255,237,111)' :
+           e === "Prize list" ? 'rgb(141,211,199)' :
+           e === "Procedure" ? 'rgb(255,255,179)' :
+           e === "Program" ? 'rgb(190,186,218)' :
+           e === "Project" ? 'rgb(251,128,114)' :
+           e === "Proposition" ? 'rgb(128,177,211)' :
+           e === "Racial Ambiance" ? 'rgb(253,180,98)' :
+           e === "Rebaptism" ? 'rgb(179,222,105)' :
+           e === "Recent acquisition" ? 'rgb(252,205,229)' :
+           e === "Reconversion" ? 'rgb(217,217,217)' :
+           e === "Scene" ? 'rgb(188,128,189)' :
+           e === "Self-reference" ? 'rgb(204,235,197)' :
+           e === "Situational poem" ? 'rgb(255,237,111)' :
+           e === "Social mystery" ? 'rgb(141,211,199)' :
+           e === "Sound art" ? 'rgb(255,255,179)' :
+           e === "Strategy" ? 'rgb(190,186,218)' :
+           e === "Style" ? 'rgb(251,128,114)' :
+           e === "Subtitle" ? 'rgb(128,177,211)' :
+           e === "Synethesia" ? 'rgb(253,180,98)' :
+           e === "Temporary Absorption Activity" ? 'rgb(179,222,105)' :
+           e === "Test" ? 'rgb(252,205,229)' :
+           e === "Theory" ? 'rgb(217,217,217)' :
+           e === "To be blown up" ? 'rgb(188,128,189)' :
+           e === "To be blown up right away" ? 'rgb(204,235,197)' :
+           e === "Trap" ? 'rgb(255,237,111)' :
+           e === "True Zone" ? 'rgb(141,211,199)' :
+           e === "Votive Offering" ? 'rgb(251,128,114)' :
+                      '#FFEDA0';
     }
+
+    // Function to create a random color
+    // function get_random_color(e) {
+    //     var letters = '0123456789ABCDEF'.split('');
+    //     var color = '#';
+    //     for (var i = 0; i < 6; i++ ) {
+    //         color += letters[Math.round(Math.random() * 15)];
+    //     } 
+    //     return color;
+    // }
 
     //marker size, popup
     function updatePropSymbols() {
