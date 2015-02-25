@@ -196,7 +196,7 @@ $(document).ready(function() {
 		pointToLayer: function(feature, latlng) {
 			return L.circle(latlng, 100,{
                     fillColor: PropColor(feature.properties.SM),
-				    color: PropColor(feature.properties.SM),
+				    color: '#000000',
                     weight: 2,
 				    fillOpacity: 0.3
 
@@ -248,7 +248,7 @@ $(document).ready(function() {
            e === "Local Figure" ? 'rgb(255,255,179)' :
            e === "Material Esthetics" ? 'rgb(190,186,218)' :
            e === "Mental Image" ? 'rgb(251,128,114)' :
-           e === "Methodology" ? 'rgb(128,177,211)' :
+           e === "Methodology" ? 'rgb(253,180,98)' :
            e === "Negative Zone" ? 'rgb(253,180,98)' :
            e === "Numerophilia" ? 'rgb(179,222,105)' :
            e === "Optical Illusion" ? 'rgb(252,205,229)' :

@@ -2,9 +2,9 @@
 
 @charset "utf-8";
 
-.clr {
+/*.clr {
 	clear:both;
-}
+}*/
 
 
 /*Many elements are set to an initial "hidden" so that
@@ -19,7 +19,7 @@ js can fade them in*/
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
-  margin-top: -8px;
+  margin-top: -3%;
   margin-right: 25%;
   margin-left: 25%;
 }
@@ -36,7 +36,7 @@ js can fade them in*/
   text-decoration: none;
   color: #ffffff;
   display: block;
-  transition: .3s background-color;
+  transition: .5s background-color;
 }
  
 .nav a:hover {
