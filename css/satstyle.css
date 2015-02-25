@@ -1,9 +1,4 @@
 /*CSS style sheet for satellite map page*/
-.clr {
-	clear:both;
-}
-
-}*/
 
 .nav ul {
   list-style: none;
@@ -68,18 +63,6 @@
     margin-right: 100px;
 }
 
-.vcr img {
-	float: left;
-	margin-right: 10px;
-	width: 48px;
-	height: 48px;
-	padding: 2px 2px 2px 2px;
-	margin-top: -3px;
-}
-
-.vcr:hover {
-    opacity: .4;
-}
 
 #menu{
 	height: 980px;
@@ -188,7 +171,7 @@ body{
 
 /*SM markers*/
 .leaflet-clickable {
-	marker-width: 50%;
+	marker-width: 100%;
     stroke-opacity: .8;
 	z-index: -5;
 	position: absolute;
@@ -260,25 +243,24 @@ body{
 .leaflet-map-pane, .leaflet-popup-pane, .leaflet-objects-pane { z-index: 1001;}
 
 #zoomlens,.zoomlens  {
-margin-top: 15px;
   overflow: visible;
   top: -9999px;
   left: -9999px;
 }
 
 #border {
-  border: 5px solid #404040;
+  border: 3px solid #404040;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
 .overlay {
   position: absolute;
- /* pointer-events: none;*/
+  pointer-events: none;
   overflow: hidden;
   width: 200px;
   height: 200px;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .rotater {

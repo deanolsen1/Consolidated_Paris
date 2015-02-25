@@ -23,22 +23,18 @@
 $(document).ready(function() {
 	var markers;
 	var iZoomNum = 0;
-	// Possible heat map layer var
     var SMFilter = [];
 	var PageFilter = [];
 	var thisPage = 9; //sets the first page of the counter to page 9
-	var speed = 100; //controls the interval of the increase/decrease speed functions.  
-		//Speed acts as the inverse of time.  Increase in speed value == increase in pause
 	var interval; //variable that holds several values for info data and speed
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGVhbm9sc2VuMSIsImEiOiJ1dkxBdm9FIn0.kapau_lUukKIE93Y8I0A9g';
 
     var map = L.mapbox.map('map', 'deanolsen1.l6ghnl45', 
-    	{zoomControl : false, 
-    		opacity: 1.0,
-    	//removed attribution from bottom of map to credits page
-    	attributionControl: false});
-      //uncomment following line for non-zoomed map view
+    	{	zoomControl : false, 
+    		opacity: 0.3,
+	    	attributionControl: false});
+
        	map.setView([48.876, 2.357], 15);
 		
 	//Setup and initialize dynamic document resize functionality
@@ -48,8 +44,8 @@ $(document).ready(function() {
 	 SizeMe(map);
 
 
-	// extra way of zooming in -- has plus button and minus button for zooming
-    new L.Control.Zoom({ position: 'topright' }).addTo(map);
+	// // extra way of zooming in -- has plus button and minus button for zooming
+ //    new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
     //load json data onto basemap; create tools
 	$.getJSON("data/Locationsv4.geojson")
@@ -187,8 +183,6 @@ $(document).ready(function() {
     function createPropSymbols(info, data, currentPage, speed,isVCR) {
         console.log(info)
         console.log(data)
-        console.log(speed)
-		console.log(isVCR);
 		
 
         if (map.hasLayer(markers)){
@@ -196,9 +190,9 @@ $(document).ready(function() {
         	};
 			
 		//if we are playing we should only show one at a time;
-		if(isVCR) {
-			$("#dvAllMyZooms").empty();
-		}
+		// if(isVCR) {
+		// 	$("#dvAllMyZooms").empty();
+		// }
 		
 		//For bounding later
 		var arrCoord = [];
@@ -254,18 +248,20 @@ $(document).ready(function() {
 						var zmap = L.mapbox.map(idM, 'deanolsen1.l4i434a2', {
 							fadeAnimation: false,
 							zoomControl: false,
-							clickable: true,
-							attributionControl: false
+							clickable: false,
+							attributionControl: false,
+
 						});
 						
 						zoomIt = function(e) {
 							if (zmap._loaded) zmap.setZoom(map.getZoom());
 						};
 
+
 						updateLens = function(e) {
-							oZlens.style.top = (e.y - 35)  + 'px';
-							oZlens.style.left = (e.x - 35) + 'px';
-							zmap.setView(e.latlng, map.getZoom()-2, true);
+							oZlens.style.top = (e.y )  + 'px';
+							oZlens.style.left = (e.x ) + 'px';
+							zmap.setView(e.latlng, map.getZoom(), true);
 						};
 						
 						map.on("zoomend",function (){ 
