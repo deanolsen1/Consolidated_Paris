@@ -357,7 +357,7 @@ $(document).ready(function() {
 		        .on('input change', function() {
 					createPropSymbols(info, data, this.value);
 					//text for slider bar
-		            $(".temporal-legend").text("On page " + this.value);
+		            $(".temporal-legend").text("on page " + this.value);
 		        });
 			return slider;
 		}
@@ -376,7 +376,7 @@ $(document).ready(function() {
 			return output;
 		}
 		temporalLegend.addTo(map);
-		$(".temporal-legend").text("On page " + startTimestamp);
+		$(".temporal-legend").text("on page " + startTimestamp);
 	}	// end createTemporalLegend()
 
 	// magnifier glass experiment

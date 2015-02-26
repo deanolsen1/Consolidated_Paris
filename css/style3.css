@@ -1,5 +1,9 @@
 /*CSS style sheet for credits page*/
 
+@font-face {
+  font-family: Franklin Gothic Heavy;
+  src: url(franklin_gothic_heavy.ttf);
+}
 .clr {
   clear:both;
 }

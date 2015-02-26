@@ -4,6 +4,11 @@
 	clear:both;
 }
 
+@font-face {
+	font-family: Franklin Gothic Heavy;
+	src: url(franklin_gothic_heavy.ttf);
+}
+
 .nav ul {
   list-style: none;
   background-color: rgba(58,55,55,.2);
@@ -137,6 +142,11 @@ h1 {
     margin-left: 200px;
 }
 
+h1 a {
+	text-decoration: none;
+	color: red;
+}
+
 /*"Subjective Marker" in menu box*/
 h2 {
 	font-family: Arial, sans-serif;
@@ -186,27 +196,27 @@ body{
 }
 
 .temporal-legend {
-	font-size: 18pt;
-	font-style: bold;
-	line-height: 120%;
+	font-size: 14pt;
+	font-weight: bold;
+	line-height: 110%;
 	background-color: rgba(58,55,55,.5);/*#6E6564*/
 	color: #F7F4F4;
-	padding: 10px 10px 10px 10px;
-	width: 150px;
+	padding: 5px;
+	width: 125px;
 	text-align: center;
 	float: left;
 	position: relative;
-	bottom: 15px;
+	bottom: 5px;
 	border: thin solid #000000;
 }
 
 .range-slider {
 	width: 532px;
-	padding-top: 6px 6px 6px 6px;
+	padding: 6px;
 	background-color: #C35557;
 	position: relative;
-	bottom: 15px;
-	z-index: 21;
+	bottom: 5px;
+	z-index: 1001;
 }
 
 .leaflet-popup-content-wrapper {
@@ -243,8 +253,8 @@ body{
 }
 */
 #border {
-/*  border: 1px solid #404040;
-*/  border-radius: 50%;
+/*  border: 1px solid #404040;*/  
+border-radius: 50%;
 /*  box-shadow: 0 0 10px rgba(0,0,0,0.25);
 */}
 

@@ -333,7 +333,7 @@ $(document).ready(function() {
 		        .on('input change', function() {
 					createPropSymbols(info, data, this.value);
 					//text for slider bar
-		            $(".temporal-legend").text("On page " + this.value);
+		            $(".temporal-legend").text("on Page " + this.value);
 		        });
 			return slider;
 		}
@@ -441,7 +441,7 @@ $(document).ready(function() {
 		}; 
 		createPropSymbols(info, data, thisPage, speed);
 		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
+		$(".temporal-legend").text( "on Page " + thisPage);
 	}
 
 	//function to allow counter and data to increment by one
@@ -449,7 +449,7 @@ $(document).ready(function() {
 		thisPage++; 
 		createPropSymbols(info, data, thisPage, speed);
 		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
+		$(".temporal-legend").text( "on Page " + thisPage);
 	}
 	//function to allow counter and data to increment by one
 	function step(info, data, speed){
@@ -458,7 +458,7 @@ $(document).ready(function() {
 			};
 		createPropSymbols(info, data, thisPage,speed);
 		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
+		$(".temporal-legend").text( "on Page " + thisPage);
 	}
 
 	//takes the user to the last page (238)
@@ -466,7 +466,7 @@ $(document).ready(function() {
 		thisPage=238; 
 		createPropSymbols(info, data, thisPage);
 		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
+		$(".temporal-legend").text( "on Page " + thisPage);
 	}
 
 	//vcr control to first page, pg 9--book starts on pg 9
@@ -474,7 +474,7 @@ $(document).ready(function() {
 		thisPage=9; 
 		createPropSymbols(info, data, thisPage);
 		$("input[type=range]").val(thisPage);
-		$(".temporal-legend").text( "On Page " + thisPage);
+		$(".temporal-legend").text( "on Page " + thisPage);
 	}
 
     //add page number demonstration 
@@ -488,7 +488,7 @@ $(document).ready(function() {
 			return output;
 		}
 		temporalLegend.addTo(map);
-		$(".temporal-legend").text("On page " + startTimestamp);
+		$(".temporal-legend").text("on Page " + startTimestamp);
 	}	// end createTemporalLegend()
 
 
