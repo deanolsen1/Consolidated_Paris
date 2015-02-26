@@ -17,7 +17,7 @@
 }
 
 .nav li {
-  font-family: arapey;
+  font-family: arial, sans-serif;
   font-size: 1em;
   line-height: 40px;
   height: 40px;
@@ -56,33 +56,32 @@ img {
 }
     
 h1 {
-	font-family: arapey;
+	font-family: arial, sans-serif;
 	font-size: 60px;
 	color: #783745;
   position: relative;
   margin-top: -250px;
   margin-bottom: 75px;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: bold;
 	line-height: 120%;
   margin-left: 250px;
   visibility: hidden;
 }
 
 h2 {
-	font-family: arapey;
+	font-family: arial, sans-serif;
 	font-size: 24pt;
 	text-align: left;
-	font-style: normal;
   width: 80%;
 	margin-bottom: -20px;
 	color: #783745;
 	position: relative;
-	font-weight: 400;
+	font-weight: bold;
   visibility: hidden;
 }
 
-body{
+body {
 	background-color: #E8E6E1;
 	font-family: arapey;
 	font-style: normal;
@@ -92,15 +91,6 @@ body{
 	padding-bottom: 10px;
 	padding-left: 10px;
   visibility: hidden;
-}
-
-#background{
-    height: 100%;
-    width: 100%;
-    opacity: .5;
-    background-image: url("../img/Background4.PNG");
-    background-size: 1800px 1800px;
-    position: absolute;
 }
 
 #text {

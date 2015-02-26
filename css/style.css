@@ -10,13 +10,13 @@
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
-  margin-top: -8px;
+  margin-top: -.5%;
   margin-right: 25%;
   margin-left: 25%;
 }
 
 .nav li {
-  font-family: arapey;
+  font-family: Arial, sans-serif;
   font-size: 1em;
   line-height: 40px;
   height: 40px;

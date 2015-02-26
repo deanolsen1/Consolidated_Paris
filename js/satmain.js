@@ -283,14 +283,14 @@ $(document).ready(function() {
 						updateLens(e)
 						zoomIt(e);	
 						
-						$("#"+idZ).on({
-							// mouseover: function(e) {
-							// 	circle.openPopup();
-							// },
-							mouseout: function(e) {
-								//circle.closePopup();
-							}
-						});								
+						// $("#"+idZ).on({
+						// 	mouseover: function(e) {
+						// 		circle.openPopup();
+						// 	},
+						// 	mouseout: function(e) {
+						// 		circle.closePopup();
+						// 	}
+						// });								
 					};
 					
 			createZoom(e);	
