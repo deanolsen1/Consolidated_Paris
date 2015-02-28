@@ -49,7 +49,7 @@ $(document).ready(function() {
      //  window.setTimeout (function () {
      //   	map.setView([48.876, 2.357], 15)}, 6000);
       //uncomment following line for non-zoomed map view
-       	map.setView([48.876, 2.357], 15);
+       	map.setView([48.874, 2.358], 15);
 
 	// extra way of zooming in -- has plus button and minus button for zooming
     new L.Control.Zoom({ position: 'topright' }).addTo(map);
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	function menuSelection(SMs, info, data) {
         var SMOptions = [];
         for (var index in SMs) {
-            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + "<br><i>&nbsp; &nbsp; &nbsp;&#40;cited " + info.SMCount[SMs[index]] + " times&#41;</i>" + "</input>");
+            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + "<i> &nbsp; &nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;</i>" + "</input>");
         };
 
         //everytime click on the option, trigger the update Menu function
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		//change map view to match initial view above. function to reset map view when button is clicked - center on 10th Arron.
 
 		$("#resetMapBtn").click(function(event) {   
-            map.setView([48.876, 2.360], 15);
+            map.setView([48.874, 2.358], 15);
         	});
     }
 
@@ -350,7 +350,7 @@ $(document).ready(function() {
 				$(".play").hide();
 				map.setView([48.876, 2.357], 15);
 				clearInterval(interval);
-				speed = 250;
+				speed = 150;
 				animateMap(info, data, speed); 
 				menuSelection(info.SMs, info, data);
 				updateMenu();
@@ -401,7 +401,7 @@ $(document).ready(function() {
 					clearInterval(interval);
 					animateMap(info, data, speed); 
 				}
-				else (speed = 250);
+				else (speed = 150);
 				//extra code to ensure slider data progress at 1/4 second delay 
 				//since initial speed starts at 250, changing by 100 would enable 
 				//user to go outside of the bounds of either increase or decrease 

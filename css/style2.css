@@ -3,35 +3,29 @@
 @charset "utf-8";
 
 @font-face {
-	font-family: Franklin Gothic Heavy;
-	src: url(franklin_gothic_heavy.ttf);
+  font-family: Franklin Gothic Heavy;
+  src: url(franklin_gothic_heavy.ttf);
 }
-
 .clr {
-	clear:both;
+  clear:both;
 }
 
-
-/*Many elements are set to an initial "hidden" so that
-js can fade them in*/
-.nav {
-	visibility: hidden;
-}
 
 .nav ul {
   list-style: none;
   background-color: rgba(58,55,55,.2);
   text-align: center;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 1px;
+  padding-left: 1px;
   margin-top: -3%;
-  margin-right: 25%;
-  margin-left: 25%;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 .nav li {
-  font-family: Arial, sans-serif;
-  font-size: 1em;
+  font-family: arial;
+  font-weight: bolder;
+  font-size: .8em;
   line-height: 40px;
   height: 40px;
   margin-bottom: 0px;
@@ -41,7 +35,7 @@ js can fade them in*/
   text-decoration: none;
   color: #ffffff;
   display: block;
-  transition: .5s background-color;
+  transition: .3s background-color;
 }
  
 .nav a:hover {
@@ -50,7 +44,7 @@ js can fade them in*/
   padding-left: 10px;
 }
  
-.nav a.active {
+.nav a:active {
   background-color: #783745;
   color: #000000;
   cursor: default;
@@ -68,13 +62,8 @@ body {
 	width: 100%;
 	color: #574B4D;
 	font-family: arapey;
-	margin-left: 3%;
-	margin-top: 3%;
-	margin-right: 3%;
-	margin-bottom: 3%;
+	margin: 3%;
 	background-size: contain;
-	font-style: normal;
-	font-weight: 400;
 }
 
 /*narrative text*/
@@ -82,8 +71,8 @@ body p {
 	font-size: 14pt;
 	line-height: 130%;
 	color: #403E3E;
-	margin-right: 300px;
-	margin-left: 25px;
+	margin-right: 7%;
+	margin-left: 2%;
 	display: inline-block;
 	padding-top: 10px;
 	padding-right: 10px;
@@ -97,15 +86,16 @@ body p {
 
 img {
 	float:left;
-	width: 775px;
+	width: 475px;
+	height: 335px;
 	visibility: hidden;
 }
 
 h1 {
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif, arapey, de-walpergens-pica, droid-serif, quattrocento-sans;
+	font-family: Franklin Gothic Heavy;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 30pt;
+	font-size: 24pt;
 	text-decoration: none;
 	color: #675A5A;
 	clear: none;
@@ -122,15 +112,10 @@ h1 {
 .title {
 	color: #783745;
 	font-weight: 400;
-	font-size: 33pt;
+	font-size: 24pt;
 }
 
-#link {
-	position: absolute;
-	visibility: hidden;
-}
-
-/*colors text about the map*/
+/*colors text */
 .emphasis {
 	color: #8C2A3F;
 	margin-top: -20px;
