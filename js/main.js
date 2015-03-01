@@ -71,7 +71,7 @@ $(document).ready(function() {
 	function menuSelection(SMs, info, data) {
         var SMOptions = [];
         for (var index in SMs) {
-            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + "<i> &nbsp; &nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;</i>" + "</input>");
+            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + " &nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;" + "</input>");
         };
 
         //everytime click on the option, trigger the update Menu function
@@ -115,7 +115,7 @@ $(document).ready(function() {
            SMFilter.push($(this).val());
        	});
 
-		$("#checkedNum").html(SMFilter.length + " categories are checked")		
+		$("#checkedNum").html(SMFilter.length + " categories are checked <br>(&nbsp;&nbsp;) = number of times cited")		
         createPropSymbols(info, data);
     }
 
@@ -198,7 +198,7 @@ $(document).ready(function() {
                     fillColor: PropColor(feature.properties.SM),
 				    color: '#000000',
                     weight: 2,
-				    fillOpacity: 0.3
+				    fillOpacity: .5
 
                 }).on({
 
