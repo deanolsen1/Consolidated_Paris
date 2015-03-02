@@ -55,7 +55,7 @@ $(document).ready(function() {
     new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
     //load json data onto basemap; create tools
-	$.getJSON("data/Locationsv4.geojson")
+	$.getJSON("data/Locationsfrench.geojson")
 		.done(function(data) {
 
 			var info = processData(data);
@@ -70,9 +70,12 @@ $(document).ready(function() {
     //dynamically created checkbox options with the number of markers after the option
 	function menuSelection(SMs, info, data) {
         var SMOptions = [];
+        SMOptions.sort();
         for (var index in SMs) {
             SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + " &nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;" + "</input>");
         };
+        SMOptions.sort();
+
 
         //everytime click on the option, trigger the update Menu function
         $("#SubjectiveMarkers").html(SMOptions.join("<br />"));
