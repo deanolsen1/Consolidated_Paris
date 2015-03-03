@@ -61,14 +61,8 @@ src: url(franklin_gothic_heavy.ttf);
 	z-index: 21;
 	right: 30px;
 	top: 940px;
-  background-color: rgba(58,55,55,.7);
+  	background-color: rgba(58,55,55,.8);
 	border: thin solid #523535;
-}
-
-.title {
-    font-family: "Franklin Gothic Heavy";
-    font-size: 18pt;
-    margin-right: 100px;
 }
 
 .vcr img {
@@ -86,7 +80,7 @@ src: url(franklin_gothic_heavy.ttf);
 
 #menu{
 	height: 740px;
-	width: 300px;
+	width: 325px;
 	float: left;
 	margin-left: 30px;
 	margin-top: 60px;
@@ -94,13 +88,13 @@ src: url(franklin_gothic_heavy.ttf);
 	font-family: arial;
 	padding: 5px;
 	font-style: normal;
-	font-size: 12pt;
+	font-size: 14pt;
 	line-height: 150%;
     color: #ffffff;
 	position: absolute;
 	left: 1px;
 	z-index: 21;
-  	background-color: rgba(58,55,55,.7);
+  	background-color: rgba(58,55,55,.8);
 	border: thin solid #000000;
 }
 
@@ -117,11 +111,8 @@ div.scroll {
 	margin-bottom: 3px;
 	overflow-y: scroll;
 	z-index: 10;
-	line-height: 120%
-	padding-top: 3px;
-	padding-right: 3px;
-	padding-bottom: 3px;
-	padding-left: 3px;
+	line-height: 140%;
+	padding: 5px;
 	border: thin solid #000000;
     color: #FFFFFF;
 }
@@ -147,6 +138,7 @@ img {
 	position: relative;
 	margin-top: -40px;
     width: 150px;
+    opacity: .5;
     height: 200px;
     margin-left: 10px;
     float: left;
@@ -171,9 +163,9 @@ h1 .emphasis {
 
 /*"Subjective Marker" in menu box*/
 h2 {
-	font-family: arial;
+	font-family: Franklin Gothic Heavy;
 	font-weight: bold;
-	font-size: 14pt;
+	font-size: 20pt;
 	text-align: center;
     color: #ffffff;
 	margin-bottom: 10px;
@@ -217,7 +209,7 @@ body{
 	font-size: 12pt;
 	font-family: arial;
 	line-height: 120%;
-	background-color: rgba(58,55,55,.7);
+	background-color: rgba(58,55,55,.8);
 	color: #F7F4F4;
 	padding: 10px ;
 	width: 150px;

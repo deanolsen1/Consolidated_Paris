@@ -62,14 +62,14 @@ $(document).ready(function() {
 	function menuSelection(SMs, info, data) {
         var SMOptions = [];
         for (var index in SMs) {
-            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ SMs[index] +"\">" + SMs[index] + "&nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;" + "</input>");
+            SMOptions.push("<input type=\"checkbox\" name=\"SMFilter\" value=\""+ CleanFName(SMs[index]) +"\">" + SMs[index] + "&nbsp;&#40;" + info.SMCount[SMs[index]] + "&#41;" + "</input>");
         };
         SMOptions.sort();
 
 
         //everytime click on the option, trigger the update Menu function
         $("#SubjectiveMarkers").html(SMOptions.join("<br />"));
-        $("#SubjectiveMarkers").on("click", function(event) {
+        $("#SubjectiveMarkers input").on("click", function(event) {
             updateMenu(info, data);
         });
 
@@ -99,12 +99,13 @@ $(document).ready(function() {
     function updateMenu(info, data){
        	SMFilter = [];
        	$( "input:checkbox[name=SMFilter]:checked").each(function(){
-           SMFilter.push($(this).val());
+           SMFilter.push(CleanFName($(this).val()));
        	});
 
 		//Remove old map info
 		$( "input:checkbox[name=SMFilter]").not(":checked").each(function(){
 			//console.log($(this).val());
+			//console.log(CleanFName($(this).val()));
 			$("." + CleanFName($(this).val())).remove();
        	});
 
@@ -202,7 +203,7 @@ $(document).ready(function() {
 					return false;
 					}
 			} else {
-				if ($.inArray(feature.properties.SM,SMFilter) !== -1) {  
+				if ($.inArray(CleanFName(feature.properties.SM),SMFilter) != -1) {  
                    return true;
             } else {
 					return false;
@@ -233,7 +234,7 @@ $(document).ready(function() {
 						var idM = "zoommap" + iZoomNum++;
 						
 						//append html
-						$("#dvAllMyZooms").append("<div id='"+idZ+"' class='zoomlens "+CleanFName(fName )+" overlay'><div id='"+idO+"' class='overlay rotater'><div class='overlay rotater'><div id='"+idM+"' class='zoommap overlay'></div></div></div><div id='border' class='overlay'></div></div>");
+						$("#dvAllMyZooms").append("<div id='"+idZ+"' class='zoomlens "+fName+" overlay'><div id='"+idO+"' class='overlay rotater'><div class='overlay rotater'><div id='"+idM+"' class='zoommap overlay'></div></div></div><div id='border' class='overlay'></div></div>");
 		
 						//grab on page object
 						var oZlens = document.getElementById(idZ);
