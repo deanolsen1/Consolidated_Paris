@@ -65,12 +65,12 @@
 
 
 #menu{
-	height: 980px;
+	height: auto;
 	width: 320px;
 	float: left;
 	margin-left: 30px;
 	margin-top: 18px;
-	top: 225px;
+	top: 55px;
 	font-family: Arial, sans-serif;
 	padding: 5px 5px 5px 5px;
 	font-size: 12pt;
@@ -86,12 +86,19 @@
 /*"Check" buttons on menu sidebar*/
 .button {
     margin-right: 4px;
+}
 
+.buttonMin {
+  border:solid 1px;
+    width: 25px;
+    height: 23px;
+    float:right;
+    cursor:pointer;
 }
 
 div.scroll {
 	width: 95%;
-	height: 85%;
+	height: auto;
 	margin-left: 3px;
 	margin-bottom: 3px;
 	overflow-y: scroll;
@@ -102,8 +109,6 @@ div.scroll {
 	padding-left: 3px;
 	border: thin solid #000000;
 	color: #000000;
-	font-weight: 500;
-	letter-spacing: normal;
 }
 
 .checkedNum {
@@ -148,14 +153,14 @@ h1 {
     margin-left: 180px;
 }
 
-h1 a {
+h2 a {
 	color: red;
 }
 
 /*"Subjective Marker" in menu box*/
 h2 {
-	font-family: arial;
-	font-size: 18pt;
+	font-family: Franklin Gothic Heavy;
+	font-size: 14pt;
 	text-align: center;
 /*	color: #3B3B3B;
 */	color: #000000;
@@ -178,7 +183,7 @@ body{
 }
 
 /*SM markers*/
-.leaflet-clickable {
+/*.leaflet-clickable {
 	marker-width: 100%;
     stroke-opacity: 1;
 	z-index: -5;
@@ -198,17 +203,17 @@ body{
     transition-property: background color;
     transition-duration: .5s;
     transition-timing-function: ease-in;
-}
+}*/
 
 .temporal-legend {
-	font-size: 14pt;
+	font-size: 11pt;
 	font-family: arial;
 	font-weight: bold;
 	line-height: 110%;
 	background-color: #F2F2F2;
 	color: #000000;
 	padding: 5px;
-	width: 125px;
+	width: 110px;
 	text-align: center;
 	float: left;
 	position: relative;
@@ -225,14 +230,14 @@ body{
 	z-index: 1001;
 }
 
-.leaflet-popup-content-wrapper {
+/*.leaflet-popup-content-wrapper {
     font-size: 18pt;
     background-color: rgba(58,55,55,.7);
     color: #F2ECEB;
     line-height: 110%;
     border: thin solid #000000;
     z-index: 10;
-}
+}*/
 
 /*Magnifier glass
 */
@@ -294,8 +299,8 @@ border-radius: 50%;
 
 #sliderContainer {
 	bottom: 48px;
-    position: absolute;
-    right: 166px;
-	margin-right: 30px;
-	z-index: 10000;
+  position: absolute;
+  right: 166px;
+/*	margin-right: 30px;
+*/	z-index: 1000;
 }

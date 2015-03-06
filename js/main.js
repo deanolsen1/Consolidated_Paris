@@ -127,7 +127,7 @@ $(document).ready(function() {
            SMFilter.push(CleanFName($(this).val()));
        	});
 
-		$("#checkedNum").html(SMFilter.length + " categories are checked <br>(&nbsp;&nbsp;) = number of times cited")		
+		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i> <br>(&nbsp;&nbsp;)<i>&nbsp;&nbsp;=&nbsp;&nbsp;times cited in text</i>")		
         createPropSymbols(info, data);
     }
 
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
 	//color of markers
     function PropColor(e) {
-    	return e === "Objet d'art involontaire" ? 'rgb(166,206,227)' :
+    	return e === "Objet d&#8217;art involontaire" ? 'rgb(166,206,227)' :
            e === "Image acoustique"  ? 'rgb(178,223,138)' :
            e === "Ambiance"  ? 'rgb(51,160,44)' :
            e === "Annonce"  ? 'rgb(251,154,153)' :
@@ -248,12 +248,12 @@ $(document).ready(function() {
            e === "Site conflictuel" ? 'rgb(255,255,179)' :
            e === "Contact" ? 'rgb(190,186,218)' :
            e === "Danger" ? 'rgb(251,128,114)' :
-           e === "L'ignoriez-vous? " ? 'rgb(128,177,211)' :
+           e === "L&#8217;ignoriez-vous? " ? 'rgb(128,177,211)' :
            e === "Vie future" ? 'rgb(253,180,98)' :
            e === "Information implicite" ? 'rgb(179,222,105)' :
            e === "Incident" ? 'rgb(252,205,229)' :
            e === "Incursion dans le monde contrefactuel" ? 'rgb(217,217,217)' :
-           e === "Indications Incarnate" ? 'rgb(188,128,189)' :
+           e === "Mobilier de norme" ? 'rgb(188,128,189)' :
            e === "Intervention" ? 'rgb(204,235,197)' :
            e === "Comparaison inter-zones" ? 'rgb(255,237,111)' :
            e === "Intrusion" ? 'rgb(141,211,199)' :
@@ -286,11 +286,11 @@ $(document).ready(function() {
            e === "Style" ? 'rgb(251,128,114)' :
            e === "Sous-titre" ? 'rgb(128,177,211)' :
            e === "Synesth&#233;sie" ? 'rgb(253,180,98)' :
-           e === "Activite d'absorption temporaire" ? 'rgb(179,222,105)' :
+           e === "Activite d&#8217;absorption temporaire" ? 'rgb(179,222,105)' :
            e === "Test" ? 'rgb(252,205,229)' :
            e === "Th&#233;orie" ? 'rgb(217,217,217)' :
            e === "&#192; faire sauter" ? 'rgb(188,128,189)' :
-           e === "&#192; faire sauter d'urgence" ? 'rgb(204,235,197)' :
+           e === "&#192; faire sauter d&#8217;urgence" ? 'rgb(204,235,197)' :
            e === "Pi&#232;ge" ? 'rgb(255,237,111)' :
            e === "Zone de vrai" ? 'rgb(141,211,199)' :
            e === "Geste votif" ? 'rgb(251,128,114)' :

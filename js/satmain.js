@@ -35,7 +35,7 @@ $(document).ready(function() {
     		opacity: 1.0,
 	    	attributionControl: false});
 
-       	map.setView([48.881, 2.358], 15);
+       	map.setView([48.874, 2.358], 15);
 		
 	//Setup and initialize dynamic document resize functionality
 	//In lieu of a better solution - the margin and removal is a hack to keep the vcr looking nice
@@ -91,7 +91,7 @@ $(document).ready(function() {
 		//change map view to match initial view above. function to reset map view when button is clicked - center on 10th Arron.
 
 		$("#resetMapBtn").click(function(event) {   
-            map.setView([48.881, 2.358], 15);
+            map.setView([48.874, 2.358], 15);
         	});
     }
 
@@ -109,9 +109,19 @@ $(document).ready(function() {
 			$("." + CleanFName($(this).val())).remove();
        	});
 
-		$("#checkedNum").html(SMFilter.length + " categories are checked <br>( ) = number of times cited")		
+		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i> <br>(&nbsp;&nbsp;)<i>&nbsp;&nbsp;=&nbsp;&nbsp;times cited in text</i>")		
         createPropSymbols(info, data);
     }
+
+    $("#buttonMin").click(function(){
+    if($(this).html() == "-"){
+        $(this).html("+");
+    }
+    else{
+        $(this).html("-");
+    }
+    $("#menu").slideToggle();
+})
 
     //update pageline 
 	function updatePages(info, data) {
@@ -241,12 +251,10 @@ $(document).ready(function() {
 						
 						//Boiler Plate Setup
 						var zmap = L.mapbox.map(idM, 'deanolsen1.l6h0h2j6', {
-							fadeAnimation: false,
-							zoomControl: false,
-							clickable: false,
+							opacity: 1.0,
 							attributionControl: false,
 
-						}).setView([48.881, 2.358], 15);
+						}).setView([48.874, 2.358], 15);
 						map.dragging.disable();
 						map.touchZoom.disable();
 						map.doubleClickZoom.disable();

@@ -83,12 +83,12 @@ src: url(franklin_gothic_heavy.ttf);
 	width: 325px;
 	float: left;
 	margin-left: 30px;
-	margin-top: 60px;
-	top: 180px;
+	top: 10px;
+	top: 75px;
 	font-family: arial;
 	padding: 5px;
 	font-style: normal;
-	font-size: 14pt;
+	font-size: 11pt;
 	line-height: 150%;
     color: #ffffff;
 	position: absolute;
@@ -100,7 +100,9 @@ src: url(franklin_gothic_heavy.ttf);
 
 /*"Check" buttons on menu sidebar*/
 .button {
-    margin-right: 4px;
+/*    margin-right: 4px;
+*/    text-align: center;
+
 
 }
 
@@ -129,7 +131,7 @@ div.scroll {
 	border: medium solid #7E5555;
 	z-index: 10;
 	left: 10px;
-	top: 215px;
+	top: 55px;
 	margin: 10px;
 }
 
@@ -165,14 +167,13 @@ h1 .emphasis {
 h2 {
 	font-family: Franklin Gothic Heavy;
 	font-weight: bold;
-	font-size: 20pt;
+	font-size: 16pt;
 	text-align: center;
     color: #ffffff;
 	margin-bottom: 10px;
 	margin-top: 0px;
 	margin-left: -5px;
 	padding: 5px;
-	width: 273px;
 }
 
 body{
@@ -206,13 +207,13 @@ body{
 }
 
 .temporal-legend {
-	font-size: 12pt;
+	font-size: 11pt;
 	font-family: arial;
 	line-height: 120%;
 	background-color: rgba(58,55,55,.8);
 	color: #F7F4F4;
 	padding: 10px ;
-	width: 150px;
+	width: 110px;
 	text-align: center;
 	float: left;
 	position: relative;
