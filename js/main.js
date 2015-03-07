@@ -127,13 +127,15 @@ $(document).ready(function() {
            SMFilter.push(CleanFName($(this).val()));
        	});
 
-		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i> <br>(&nbsp;&nbsp;)<i>&nbsp;&nbsp;=&nbsp;&nbsp;times cited in text</i>")		
+		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i>"
+			 // <br>(&nbsp;&nbsp;)<i>&nbsp;&nbsp;=&nbsp;&nbsp;times cited in text</i>"
+			)		
         createPropSymbols(info, data);
     }
-
+    // Minimize menu toggle switch
         $(".buttonMin").click(function() {
-    	$(this).toggleClass("btn-plus");
-        $("div.scroll").slideToggle();
+    		$(this).toggleClass("btn-plus");
+        	$("div.scroll").slideToggle();
     })
 
 

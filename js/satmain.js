@@ -109,7 +109,7 @@ $(document).ready(function() {
 			$("." + CleanFName($(this).val())).remove();
        	});
 
-		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i> <br>(&nbsp;&nbsp;)<i>&nbsp;&nbsp;=&nbsp;&nbsp;times cited in text</i>")		
+		$("#checkedNum").html(SMFilter.length + "<i>&nbsp;&nbsp;SMs selected</i> ")		
         createPropSymbols(info, data);
     }
 

@@ -9,23 +9,27 @@ src: url(franklin_gothic_heavy.ttf);
 	clear:both;
 }
 
+body {
+	  background-color: #E8E8E8;
+}
+
 .nav ul {
   list-style: none;
   background-color: rgba(58,55,55,.2);
   text-align: center;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-top: -8px;
-  margin-right: 25%;
-  margin-left: 25%;
+  margin-right: 30%;
+  margin-left: 30%;
 }
 
 .nav li {
   font-family: arial;
   font-weight: bold;
-  font-size: .9em;
-  line-height: 40px;
-  height: 40px;
+  font-size: .7em;
+  line-height: 25px;
+  height: 25px;
   margin-bottom: 0px;
 }
  
@@ -57,34 +61,55 @@ src: url(franklin_gothic_heavy.ttf);
 #vcr-controls {
 	position: absolute;
 	width: auto;
+	height: auto;
     padding: 10px;
 	z-index: 21;
-	right: 30px;
+	right: 25px;
   	background-color: rgba(220,220,220,.7);
-	border: thin solid #523535;
+	border: thin solid black;
 }
 
 .vcr img {
 	float: left;
 	margin-right: 10px;
-	width: 48px;
-	height: 48px;
-	padding: 2px 2px 2px 2px;
-	margin-top: -3px;
+	width: 28px;
+	height: 28px;
+	padding: 2px;
 }
 
-.vcr:hover {
-    opacity: .4;
+.temporal-legend {
+	font-size: 11pt;
+	font-family: arial;
+	font-weight: 600;
+	background-color: rgba(220,220,220,.9);
+	color: black;
+	padding: 5px;
+	margin: 5px;
+	width: auto;
+	height: auto;
+	right: 5px;
+	text-align: center;
+	float: left;
+	position: relative;
+	bottom: 90px;
+	border: thin solid #000000;
 }
 
+.range-slider {
+	width: 320px;
+	background-color: rgba(220,220,220,.9);
+	position: absolute;
+	bottom: 70px;
+	right: 5px;
+	margin: 5px;
+}
 
 #menu{
 	height: 740px;
 	width: 325px;
 	float: left;
 	margin-left: 30px;
-	top: 10px;
-	top: 75px;
+	top: 45px;
 	font-family: arial;
 	font-weight: 600;
 	padding: 5px;
@@ -93,7 +118,7 @@ src: url(franklin_gothic_heavy.ttf);
 	line-height: 150%;
     color: #675A5A;
 	position: absolute;
-	left: 1px;
+	left: -10px;
 	z-index: 21;
 }
 
@@ -140,7 +165,7 @@ div.scroll {
 	border: medium solid #7E5555;
 	z-index: 10;
 	left: 10px;
-	top: 55px;
+	top: 35px;
 	margin: 10px;
 }
 
@@ -185,38 +210,6 @@ h2 {
     transition-timing-function: ease-in;
 }
 
-.temporal-legend {
-	font-size: 11pt;
-	font-family: arial;
-	font-weight: 600;
-	line-height: 120%;
-	background-color: rgba(220,220,220,.9);
-	color: #675A5A;
-	padding: 10px ;
-	width: 110px;
-	right: 0px;
-	text-align: center;
-	float: left;
-	position: relative;
-	bottom: 50px;
-	border: thin solid #000000;
-}
 
-.range-slider {
-	width: 532px;
-	padding: 6px;
-	background-color: rgba(220,220,220,.9);
-	position: relative;
-	bottom: 70px;
-}
 
-.leaflet-popup-content-wrapper {
-    font-size: 14pt;
-    font-family: arial;
-    background-color: rgba(58,55,55,.8);
-    color: #F2ECEB;
-    line-height: 110%;
-    border: thin solid #000000;
-    z-index: 100;
-}
 
