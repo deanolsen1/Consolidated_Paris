@@ -131,6 +131,12 @@ $(document).ready(function() {
         createPropSymbols(info, data);
     }
 
+        $(".buttonMin").click(function() {
+    	$(this).toggleClass("btn-plus");
+        $("div.scroll").slideToggle();
+    })
+
+
     //update pageline 
 	function updatePages(info, data) {
 		PageFilter = [];
@@ -208,9 +214,9 @@ $(document).ready(function() {
 		pointToLayer: function(feature, latlng) {
 			return L.circle(latlng, 100,{
                     fillColor: PropColor(feature.properties.SM),
-				    color: '#000000',
-                    weight: 2,
-				    fillOpacity: .5
+				    color: PropColor(feature.properties.SM),
+                    weight: 3,
+				    fillOpacity: .4
 
                 }).on({
 
@@ -221,7 +227,7 @@ $(document).ready(function() {
 					},
 					mouseout: function(e) {
 						this.closePopup();
-						this.setStyle({color: PropColor(feature.properties.SM) });
+						this.setStyle({color: '#000000'});
 					}
 				});
 			}

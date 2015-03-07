@@ -9,7 +9,7 @@
 	var iBodyWidth = $("body").width();
 	var iBodyHeight = $("body").height();
 	var iMenuOffset = 40;
-	var iSubMenuOffset = 151;
+	var iSubMenuOffset = 161;
 	//var iVCRHeight = 49;
 	//var iVCROffset = 60;
 	
@@ -113,15 +113,10 @@ $(document).ready(function() {
         createPropSymbols(info, data);
     }
 
-    $("#buttonMin").click(function(){
-    if($(this).html() == "-"){
-        $(this).html("+");
-    }
-    else{
-        $(this).html("-");
-    }
-    $("#menu").slideToggle();
-})
+    $(".buttonMin").click(function() {
+    	$(this).toggleClass("btn-plus");
+        $("div.scroll").slideToggle();
+    })
 
     //update pageline 
 	function updatePages(info, data) {
